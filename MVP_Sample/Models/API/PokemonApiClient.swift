@@ -9,7 +9,7 @@ import Foundation
 
 final class PokemonApiClient {
     
-    func fetchPokemonList() async -> [Pokemon] {
+    static func fetchPokemonList() async throws -> [Pokemon] {
 
         let idRange = Constants.searchPokemonIdRange
         let urls = idRange.map { (id: Int) -> URL in
