@@ -25,6 +25,7 @@
 		249F225927B814CF00A1F2A0 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F225827B814CF00A1F2A0 /* ApiClient.swift */; };
 		249F225D27B8E2F200A1F2A0 /* PokemonApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F225C27B8E2F200A1F2A0 /* PokemonApiClient.swift */; };
 		249F226027B8E38400A1F2A0 /* CallApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F225F27B8E38400A1F2A0 /* CallApiError.swift */; };
+		249F226327B8E4A900A1F2A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F226227B8E4A900A1F2A0 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		249F225827B814CF00A1F2A0 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		249F225C27B8E2F200A1F2A0 /* PokemonApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonApiClient.swift; sourceTree = "<group>"; };
 		249F225F27B8E38400A1F2A0 /* CallApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallApiError.swift; sourceTree = "<group>"; };
+		249F226227B8E4A900A1F2A0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		249F220727B7EBD400A1F2A0 /* MVP_Sample */ = {
 			isa = PBXGroup;
 			children = (
+				249F226127B8E49800A1F2A0 /* Constants */,
 				249F225E27B8E36A00A1F2A0 /* Errors */,
 				249F223B27B7F13C00A1F2A0 /* Models */,
 				249F223C27B7F14F00A1F2A0 /* Views */,
@@ -266,6 +269,14 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		249F226127B8E49800A1F2A0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				249F226227B8E4A900A1F2A0 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				249F225727B8144700A1F2A0 /* Pokemon.swift in Sources */,
+				249F226327B8E4A900A1F2A0 /* Constants.swift in Sources */,
 				249F225D27B8E2F200A1F2A0 /* PokemonApiClient.swift in Sources */,
 				249F225427B8124A00A1F2A0 /* PokemonListPresenter.swift in Sources */,
 				249F226027B8E38400A1F2A0 /* CallApiError.swift in Sources */,
