@@ -11,7 +11,7 @@ final class PokemonApiClient {
     
     func fetchPokemonList() async -> [Pokemon] {
 
-        let idRange = 1...5
+        let idRange = Constants.searchPokemonIdRange
         let urls = idRange.map { (id: Int) -> URL in
             let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(id)/")!
             return url

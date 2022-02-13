@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ApiClient {
+struct ApiClient {
 
     static func fetchData<T: Decodable>(urls: [URL]) async throws -> [T] {
 
