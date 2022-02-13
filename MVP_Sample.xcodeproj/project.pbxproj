@@ -188,8 +188,8 @@
 		249F224327B80B5F00A1F2A0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				249F224527B80BA900A1F2A0 /* PokemonListTableViewCell.xib */,
 				249F224727B80BBD00A1F2A0 /* PokemonListTableViewCell.swift */,
+				249F224527B80BA900A1F2A0 /* PokemonListTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
