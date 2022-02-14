@@ -38,12 +38,16 @@ extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        64
+    }
+
 
 }
 
 extension PokemonListViewController: PokemonListPresenterOutput {
     func showError() {
-        print("error")
+        showAlert()
     }
 
     func showPokemon(_ pokemons: [Pokemon]) {
@@ -52,4 +56,13 @@ extension PokemonListViewController: PokemonListPresenterOutput {
             self.tableView.reloadData()
         }
     }
+
+    private func showAlert() {
+        let alert = UIAlertController(title: "エラー", message: "データの取得に失敗しました。", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "はい", style: .default, handler: nil)
+
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+
 }
