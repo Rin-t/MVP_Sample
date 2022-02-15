@@ -9,9 +9,28 @@ import UIKit
 
 final class PokemonDetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet private weak var idLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var pokemonImage: UIImageView!
 
+    private let pokemon: Pokemon
+
+    init(pokemon: Pokemon) {
+        self.pokemon = pokemon
+        super.init(nibName: nil, bundle: nil)
     }
 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+    }
+
+    func setupViews() {
+        nameLabel.text = pokemon.name
+        idLabel.text = "No.\(pokemon.id)"
+    }
 }
