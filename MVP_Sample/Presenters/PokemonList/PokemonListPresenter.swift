@@ -18,13 +18,16 @@ protocol PokemonListPresenterOutput: AnyObject {
 
 final class PokemonListPresenter {
 
+    // propaties
     private weak var view: PokemonListPresenterOutput?
 
+    // life cycles
     init(view: PokemonListPresenterOutput) {
         self.view = view
     }
 }
 
+//MARK: - PokemonListPresenterInput
 extension PokemonListPresenter: PokemonListPresenterInput {
     func didLoad() {
         Task {

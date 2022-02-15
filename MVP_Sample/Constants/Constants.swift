@@ -8,6 +8,5 @@
 import Foundation
 
 struct Constants {
-    
     static let searchPokemonIdRange = 1...151
 }

@@ -10,7 +10,6 @@ import Foundation
 struct ApiClient {
 
     static func fetchData<T: Decodable>(urls: [URL]) async throws -> [T] {
-
         var results = [T]()
         do {
             try await withThrowingTaskGroup(of: (Data, URLResponse).self) { group in

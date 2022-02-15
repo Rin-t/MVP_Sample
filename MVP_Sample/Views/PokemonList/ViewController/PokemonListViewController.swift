@@ -9,6 +9,7 @@ import UIKit
 
 final class PokemonListViewController: UIViewController {
 
+    // outlets
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -17,9 +18,11 @@ final class PokemonListViewController: UIViewController {
         }
     }
 
+    // propaties
     private var presenter: PokemonListPresenterInput?
     private var pokemons = [Pokemon]()
-    
+
+    // life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = PokemonListPresenter(view: self)
@@ -27,6 +30,7 @@ final class PokemonListViewController: UIViewController {
     }
 }
 
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         pokemons.count
@@ -51,6 +55,7 @@ extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource 
 
 }
 
+//MARK: - PokemonListPresenterOutput
 extension PokemonListViewController: PokemonListPresenterOutput {
     func showError() {
         showAlert()

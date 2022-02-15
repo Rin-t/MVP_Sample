@@ -15,10 +15,11 @@ final class PokemonListTableViewCell: UITableViewCell {
         UINib(nibName: identifire, bundle: nil)
     }
 
+    // outlets
     @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
 
-
+    // methods
     func configure(pokemon: Pokemon) {
         let id = String(pokemon.id)
         idLabel.text = "No. \(id)"
