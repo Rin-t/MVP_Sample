@@ -10,13 +10,14 @@ import UIKit
 final class PokemonListViewController: UIViewController {
 
     // outlets
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.register(PokemonListTableViewCell.nib(), forCellReuseIdentifier: PokemonListTableViewCell.identifire)
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.register(PokemonListCollectionViewCell.nib(), forCellWithReuseIdentifier: PokemonListCollectionViewCell.identifire)
         }
     }
+
 
     // propaties
     private var presenter: PokemonListPresenterInput?
@@ -31,25 +32,20 @@ final class PokemonListViewController: UIViewController {
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
-extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pokemons.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PokemonListTableViewCell.identifire, for: indexPath) as! PokemonListTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PokemonListCollectionViewCell.identifire, for: indexPath) as! PokemonListCollectionViewCell
         cell.configure(pokemon: pokemons[indexPath.row])
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let nextVC = PokemonDetailViewController(pokemon: pokemons[indexPath.row])
-        show(nextVC, sender: nil)
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        64
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 
 
@@ -64,7 +60,7 @@ extension PokemonListViewController: PokemonListPresenterOutput {
     func showPokemon(_ pokemons: [Pokemon]) {
         self.pokemons = pokemons
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
     }
 
