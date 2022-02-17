@@ -28,6 +28,17 @@ final class PokemonListViewController: UIViewController {
         super.viewDidLoad()
         presenter = PokemonListPresenter(view: self)
         presenter?.didLoad()
+        setupCollectionViewLayout()
+
+    }
+
+    func setupCollectionViewLayout() {
+        let width = view.frame.width
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: width * 0.4, height: width * 0.4)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: width * 0.2 / 3, bottom: 20, right: width * 0.2 / 3)
+        layout.minimumInteritemSpacing = width * 0.2 / 3
+        collectionView.collectionViewLayout = layout
     }
 }
 
@@ -45,7 +56,7 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
     }
 
 
