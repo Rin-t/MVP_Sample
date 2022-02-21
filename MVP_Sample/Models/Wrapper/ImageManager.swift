@@ -10,7 +10,7 @@ import UIKit
 
 struct ImageManager {
 
-    static func setImage(targetImageView: UIImageView, url: URL) {
-        targetImageView.sd_setImage(with: url, completed: nil)
+    static func setImage(target: UIImageView, url: URL?) {
+        target.sd_setImage(with: url, completed: nil)
     }
 }
