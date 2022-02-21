@@ -6,7 +6,8 @@ target 'MVP_Sample' do
   use_frameworks!
 
   # Pods for MVP_Sample
-pod 'PKHUD'
+  pod 'PKHUD'
+  pod 'SDWebImage'
 
   target 'MVP_SampleTests' do
     inherit! :search_paths
