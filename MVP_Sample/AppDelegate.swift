@@ -18,7 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: PokemonListViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        setup(navigationController: navigationController)
         return true
+    }
+
+    private func setup(navigationController: UINavigationController) {
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.backgroundColor = .systemPink
+            navigationController.navigationBar.standardAppearance = appearance
+            navigationController.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationController.navigationBar.barTintColor = .systemPink
+        }
     }
 }
 
