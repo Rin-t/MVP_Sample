@@ -15,6 +15,7 @@ final class PokemonListViewController: UIViewController {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(PokemonListCollectionViewCell.nib(), forCellWithReuseIdentifier: PokemonListCollectionViewCell.identifire)
+
         }
     }
 
@@ -22,24 +23,22 @@ final class PokemonListViewController: UIViewController {
     // propaties
     private var presenter: PokemonListPresenterInput?
     private var pokemons = [Pokemon]()
+    private var cellGenerator: CollectionViewCellGenerator!
 
     // life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = PokemonListPresenter(view: self)
         presenter?.didLoad()
-        setupCollectionViewLayout()
+        cellGenerator = CollectionViewCellGenerator(holizontalMargin: 12,
+                                                    verticalMargin: 12,
+                                                    itemsInRow: 2,
+                                                    spacing: 12,
+                                                    collectionView: collectionView)
+        cellGenerator.setupCollectionViewLayout()
     }
 
-    func setupCollectionViewLayout() {
-        let width = view.frame.width
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: width * 0.4, height: width * 0.4)
-        layout.sectionInset = UIEdgeInsets(top: 30, left: width * 0.2 / 3, bottom: 30, right: width * 0.2 / 3)
-        layout.minimumLineSpacing = 30
-        layout.minimumInteritemSpacing = width * 0.2 / 3
-        collectionView.collectionViewLayout = layout
-    }
+    
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -52,8 +51,9 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PokemonListCollectionViewCell.identifire, for: indexPath) as! PokemonListCollectionViewCell
         cell.configure(pokemon: pokemons[indexPath.row])
-        cell.layer.cornerRadius = view.frame.width * 0.4 / 2
-        cell.layer.borderWidth = 2
+        cell.layer.cornerRadius = cellGenerator.getCornerRadiusToMakeCircleItem()
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
         return cell
     }
 
@@ -62,6 +62,12 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
 
+}
+
+extension PokemonListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return cellGenerator.getItemSizeWithEqualSpacing()
+    }
 }
 
 //MARK: - PokemonListPresenterOutput
