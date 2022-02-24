@@ -15,7 +15,6 @@ final class PokemonListViewController: UIViewController {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(PokemonListCollectionViewCell.nib(), forCellWithReuseIdentifier: PokemonListCollectionViewCell.identifire)
-
         }
     }
 
@@ -60,7 +59,6 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
     }
-
 
 }
 

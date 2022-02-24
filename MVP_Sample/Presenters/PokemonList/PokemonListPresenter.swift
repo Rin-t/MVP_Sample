@@ -9,6 +9,7 @@ import Foundation
 
 protocol PokemonListPresenterInput: AnyObject {
     func didLoad()
+    func didSelectItem()
 }
 
 protocol PokemonListPresenterOutput: AnyObject {
@@ -29,6 +30,7 @@ final class PokemonListPresenter {
 
 //MARK: - PokemonListPresenterInput
 extension PokemonListPresenter: PokemonListPresenterInput {
+
     func didLoad() {
         Task {
             do {
@@ -38,5 +40,9 @@ extension PokemonListPresenter: PokemonListPresenterInput {
                 view?.showError()
             }
         }
+    }
+
+    func didSelectItem() {
+        print("tapped")
     }
 }

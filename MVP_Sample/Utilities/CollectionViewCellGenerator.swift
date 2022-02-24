@@ -8,6 +8,7 @@
 import UIKit
 
 class CollectionViewCellGenerator {
+    
     let holizontalMargin: CGFloat
     let verticalMargin: CGFloat
     let itemsInRow: CGFloat
