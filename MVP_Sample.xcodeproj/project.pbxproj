@@ -26,7 +26,7 @@
 		249F225727B8144700A1F2A0 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F225627B8144700A1F2A0 /* Pokemon.swift */; };
 		249F225927B814CF00A1F2A0 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F225827B814CF00A1F2A0 /* ApiClient.swift */; };
 		249F225D27B8E2F200A1F2A0 /* PokemonApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F225C27B8E2F200A1F2A0 /* PokemonApiClient.swift */; };
-		249F226027B8E38400A1F2A0 /* CallApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F225F27B8E38400A1F2A0 /* CallApiError.swift */; };
+		249F226027B8E38400A1F2A0 /* ApiCallError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F225F27B8E38400A1F2A0 /* ApiCallError.swift */; };
 		249F226327B8E4A900A1F2A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F226227B8E4A900A1F2A0 /* Constants.swift */; };
 		24AF8DD127BE8F84005F1A29 /* PokemonListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AF8DD027BE8F84005F1A29 /* PokemonListCollectionViewCell.xib */; };
 		24AF8DD427BFF2CF005F1A29 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AF8DD327BFF2CF005F1A29 /* ImageManager.swift */; };
@@ -74,7 +74,7 @@
 		249F225627B8144700A1F2A0 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		249F225827B814CF00A1F2A0 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		249F225C27B8E2F200A1F2A0 /* PokemonApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonApiClient.swift; sourceTree = "<group>"; };
-		249F225F27B8E38400A1F2A0 /* CallApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallApiError.swift; sourceTree = "<group>"; };
+		249F225F27B8E38400A1F2A0 /* ApiCallError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCallError.swift; sourceTree = "<group>"; };
 		249F226227B8E4A900A1F2A0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		24AF8DD027BE8F84005F1A29 /* PokemonListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonListCollectionViewCell.xib; sourceTree = "<group>"; };
 		24AF8DD327BFF2CF005F1A29 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
@@ -146,6 +146,7 @@
 				24AF8E1127C67ACC005F1A29 /* Utilities */,
 				249F226127B8E49800A1F2A0 /* Constants */,
 				249F225E27B8E36A00A1F2A0 /* Errors */,
+				249F225A27B8E2B500A1F2A0 /* API */,
 				249F223B27B7F13C00A1F2A0 /* Models */,
 				249F224927B80C4100A1F2A0 /* PokemonList */,
 				249F224B27B80C8F00A1F2A0 /* PokemonDetail */,
@@ -186,8 +187,7 @@
 		249F223B27B7F13C00A1F2A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				249F225B27B8E2D400A1F2A0 /* Entity */,
-				249F225A27B8E2B500A1F2A0 /* API */,
+				249F225627B8144700A1F2A0 /* Pokemon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,18 +263,10 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		249F225B27B8E2D400A1F2A0 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				249F225627B8144700A1F2A0 /* Pokemon.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		249F225E27B8E36A00A1F2A0 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				249F225F27B8E38400A1F2A0 /* CallApiError.swift */,
+				249F225F27B8E38400A1F2A0 /* ApiCallError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -580,7 +572,7 @@
 				249F226327B8E4A900A1F2A0 /* Constants.swift in Sources */,
 				249F225D27B8E2F200A1F2A0 /* PokemonApiClient.swift in Sources */,
 				249F225427B8124A00A1F2A0 /* PokemonListPresenter.swift in Sources */,
-				249F226027B8E38400A1F2A0 /* CallApiError.swift in Sources */,
+				249F226027B8E38400A1F2A0 /* ApiCallError.swift in Sources */,
 				249F220D27B7EBD400A1F2A0 /* PokemonListViewController.swift in Sources */,
 				249F225927B814CF00A1F2A0 /* ApiClient.swift in Sources */,
 				249F224827B80BBD00A1F2A0 /* PokemonListCollectionViewCell.swift in Sources */,
