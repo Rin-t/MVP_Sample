@@ -9,12 +9,13 @@ import Foundation
 
 protocol PokemonListPresenterInput: AnyObject {
     func didLoad()
-    func didSelectItem()
+    func didSelectItem(pokemon: Pokemon)
 }
 
 protocol PokemonListPresenterOutput: AnyObject {
     func showError()
     func showPokemon(_ pokemons: [Pokemon])
+    func presentPokemonDetailVC(pokemon: Pokemon)
 }
 
 final class PokemonListPresenter {
@@ -42,7 +43,7 @@ extension PokemonListPresenter: PokemonListPresenterInput {
         }
     }
 
-    func didSelectItem() {
-        print("tapped")
+    func didSelectItem(pokemon: Pokemon) {
+        view?.presentPokemonDetailVC(pokemon: pokemon)
     }
 }

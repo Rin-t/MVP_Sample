@@ -36,5 +36,7 @@ final class PokemonDetailViewController: UIViewController {
     func setupViews() {
         nameLabel.text = pokemon.name
         idLabel.text = "No.\(pokemon.id)"
+        let url = URL(string: pokemon.sprites.frontImage)
+        ImageManager.setImage(target: pokemonImage, url: url)
     }
 }

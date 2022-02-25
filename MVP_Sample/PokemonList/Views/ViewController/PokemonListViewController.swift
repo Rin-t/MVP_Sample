@@ -57,7 +57,7 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        presenter?.didSelectItem(pokemon: pokemons[indexPath.row])
     }
 
 }
@@ -70,8 +70,17 @@ extension PokemonListViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - PokemonListPresenterOutput
 extension PokemonListViewController: PokemonListPresenterOutput {
+    
+    func presentPokemonDetailVC(pokemon: Pokemon) {
+        let vc = PokemonDetailViewController(pokemon: pokemon)
+        show(vc, sender: nil)
+    }
+
+
     func showError() {
-        showAlert()
+        DispatchQueue.main.async {
+            self.showAlert()
+        }
     }
 
     func showPokemon(_ pokemons: [Pokemon]) {
