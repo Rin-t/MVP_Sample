@@ -19,10 +19,10 @@ protocol PokemonListPresenterOutput: AnyObject {
 
 final class PokemonListPresenter {
 
-    // propaties
+    // Properties
     private weak var view: PokemonListPresenterOutput?
 
-    // life cycles
+    // LifeCycles
     init(view: PokemonListPresenterOutput) {
         self.view = view
     }
