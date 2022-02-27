@@ -142,8 +142,7 @@
 		249F220727B7EBD400A1F2A0 /* MVP_Sample */ = {
 			isa = PBXGroup;
 			children = (
-				24AF8DD227BFF2B7005F1A29 /* Library */,
-				24AF8E1127C67ACC005F1A29 /* Utilities */,
+				24AF8E1127C67ACC005F1A29 /* Helpers */,
 				249F226127B8E49800A1F2A0 /* Constants */,
 				249F225E27B8E36A00A1F2A0 /* Errors */,
 				249F225A27B8E2B500A1F2A0 /* API */,
@@ -279,20 +278,13 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		24AF8DD227BFF2B7005F1A29 /* Library */ = {
+		24AF8E1127C67ACC005F1A29 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				24AF8DD327BFF2CF005F1A29 /* ImageManager.swift */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		24AF8E1127C67ACC005F1A29 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
 				24AF8E1227C67D13005F1A29 /* CollectionViewCellGenerator.swift */,
 			);
-			path = Utilities;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		24AF8E1427C8E425005F1A29 /* Presenter */ = {
