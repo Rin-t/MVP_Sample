@@ -37,7 +37,7 @@ class CollectionViewCellGenerator {
         return CGSize(width: width, height: width)
     }
 
-    func getCornerRadiusToMakeCircleItem() -> CGFloat {
+    func getCornerRadiusToMakeItemCircle() -> CGFloat {
         let availableWidth = (collectionView.frame.width - holizontalMargin * 2) - spacing * (itemsInRow - 1)
         let width = availableWidth / itemsInRow
         return width / 2

@@ -50,7 +50,7 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PokemonListCollectionViewCell.identifire, for: indexPath) as! PokemonListCollectionViewCell
         cell.configure(pokemon: pokemons[indexPath.row])
-        cell.layer.cornerRadius = cellGenerator.getCornerRadiusToMakeCircleItem()
+        cell.layer.cornerRadius = cellGenerator.getCornerRadiusToMakeItemCircle()
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         return cell
