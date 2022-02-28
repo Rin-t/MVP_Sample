@@ -7,13 +7,14 @@
 
 import UIKit
 
+// 実装としてあんまり良くなさそう
 class CollectionViewCellGenerator {
     
-    let holizontalMargin: CGFloat
-    let verticalMargin: CGFloat
-    let itemsInRow: CGFloat
-    let spacing: CGFloat
-    let collectionView: UICollectionView
+    private let holizontalMargin: CGFloat
+    private let verticalMargin: CGFloat
+    private let itemsInRow: CGFloat
+    private let spacing: CGFloat
+    private let collectionView: UICollectionView
 
 
     init(holizontalMargin: CGFloat, verticalMargin: CGFloat, itemsInRow: Int, spacing: CGFloat, collectionView: UICollectionView) {
