@@ -8,6 +8,7 @@
 import UIKit
 
 // 実装としてあんまり良くなさそう
+// 等間隔でセルを配置したいときに使う。
 class CollectionViewCellGenerator {
     
     private let holizontalMargin: CGFloat
@@ -17,19 +18,19 @@ class CollectionViewCellGenerator {
     private let collectionView: UICollectionView
 
 
+    /// - Parameters:
+    ///   - holizontalMargin: sectionの上下の余白
+    ///   - verticalMargin: sectionの左右の余白
+    ///   - itemsInRow: １列に並べるセルの個数
+    ///   - spacing: セルの間のスペース
+    ///   - collectionView: ターゲットのcollectionView
     init(holizontalMargin: CGFloat, verticalMargin: CGFloat, itemsInRow: Int, spacing: CGFloat, collectionView: UICollectionView) {
         self.holizontalMargin = holizontalMargin
         self.verticalMargin = verticalMargin
         self.itemsInRow = CGFloat(itemsInRow)
         self.spacing = spacing
         self.collectionView = collectionView
-    }
-
-    func setupCollectionViewLayout() {
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: verticalMargin, left: holizontalMargin, bottom: verticalMargin, right: holizontalMargin)
-        layout.minimumInteritemSpacing = spacing
-        collectionView.collectionViewLayout = layout
+        setupCollectionViewLayout()
     }
 
     func getItemSizeWithEqualSpacing() -> CGSize {
@@ -44,4 +45,14 @@ class CollectionViewCellGenerator {
         return width / 2
     }
 
+}
+
+extension CollectionViewCellGenerator {
+
+    private func setupCollectionViewLayout() {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: verticalMargin, left: holizontalMargin, bottom: verticalMargin, right: holizontalMargin)
+        layout.minimumInteritemSpacing = spacing
+        collectionView.collectionViewLayout = layout
+    }
 }

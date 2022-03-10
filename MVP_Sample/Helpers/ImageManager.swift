@@ -8,6 +8,7 @@
 import SDWebImage
 import UIKit
 
+// ライブラリのimportを一箇所にまとめるためのクラスを作った
 struct ImageManager {
 
     static func setImage(target: UIImageView, url: URL?) {
