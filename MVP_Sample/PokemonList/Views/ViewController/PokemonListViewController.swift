@@ -28,16 +28,15 @@ final class PokemonListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = PokemonListPresenter(view: self)
-        presenter?.didLoad()
+        presenter?.viewDidLoad()
         cellGenerator = CollectionViewCellGenerator(holizontalMargin: 12,
                                                     verticalMargin: 12,
                                                     itemsInRow: 2,
                                                     spacing: 12,
                                                     collectionView: collectionView)
-        cellGenerator.setupCollectionViewLayout()
+        navigationItem.title = "一覧"
+        navigationController?.navigationBar.tintColor = .white
     }
-
-    
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -62,11 +61,15 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
 
 }
 
+
+//MARK: - UICollectionViewDelegateFlowLayout
 extension PokemonListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellGenerator.getItemSizeWithEqualSpacing()
     }
 }
+
+
 
 //MARK: - PokemonListPresenterOutput
 extension PokemonListViewController: PokemonListPresenterOutput {

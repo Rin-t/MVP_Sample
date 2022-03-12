@@ -33,12 +33,15 @@ class CollectionViewCellGenerator {
         setupCollectionViewLayout()
     }
 
+    /// 正方形のCellを作るときに、UICollectionViewDelegateFlowLayoutのSizeForItemAtで呼ぶ
+    /// Cellのサイズを取得できる。
     func getItemSizeWithEqualSpacing() -> CGSize {
         let availableWidth = (collectionView.frame.width - holizontalMargin * 2) - spacing * (itemsInRow - 1)
         let width = availableWidth / itemsInRow
         return CGSize(width: width, height: width)
     }
 
+    /// Cellを円にするためのCornerRadiusを取得するときに呼ぶ。
     func getCornerRadiusToMakeItemCircle() -> CGFloat {
         let availableWidth = (collectionView.frame.width - holizontalMargin * 2) - spacing * (itemsInRow - 1)
         let width = availableWidth / itemsInRow

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PokemonListPresenterInput: AnyObject {
-    func didLoad()
+    func viewDidLoad()
     func didSelectItem(pokemon: Pokemon)
 }
 
@@ -32,7 +32,7 @@ final class PokemonListPresenter {
 //MARK: - PokemonListPresenterInput
 extension PokemonListPresenter: PokemonListPresenterInput {
 
-    func didLoad() {
+    func viewDidLoad() {
         Task {
             do {
                 let pokemons = try await PokemonApiClient.fetchPokemonList()

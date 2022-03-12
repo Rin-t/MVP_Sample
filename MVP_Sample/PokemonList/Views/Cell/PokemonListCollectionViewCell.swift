@@ -10,7 +10,7 @@ import UIKit
 
 final class PokemonListCollectionViewCell: UICollectionViewCell {
 
-    // statics
+    // Statics
     static let identifire = "PokemonListCollectionViewCell"
     static func nib() -> UINib {
         UINib(nibName: identifire, bundle: nil)
