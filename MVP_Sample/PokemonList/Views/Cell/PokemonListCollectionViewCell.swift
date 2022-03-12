@@ -16,16 +16,16 @@ final class PokemonListCollectionViewCell: UICollectionViewCell {
         UINib(nibName: identifire, bundle: nil)
     }
 
+    // Outlets
+    @IBOutlet private weak var numberLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var pokemonImageView: UIImageView!
 
-    @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var pokemonImageView: UIImageView!
-
+    // Methods
     func configure(pokemon: Pokemon) {
         numberLabel.text = "No. \(pokemon.id)"
         nameLabel.text = pokemon.name
         let url = URL(string: pokemon.sprites.frontImage)
         ImageManager.setImage(target: pokemonImageView, url: url)
     }
-
 }

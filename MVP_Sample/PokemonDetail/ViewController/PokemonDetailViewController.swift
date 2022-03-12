@@ -9,15 +9,17 @@ import UIKit
 
 final class PokemonDetailViewController: UIViewController {
 
-    // outlets
+    // Outlets
     @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var pokemonImage: UIImageView!
 
-    // propaties
+
+    // Properties
     private let pokemon: Pokemon
 
-    // life cycles
+
+    // LifeCycles
     init(pokemon: Pokemon) {
         self.pokemon = pokemon
         super.init(nibName: nil, bundle: nil)
@@ -31,8 +33,10 @@ final class PokemonDetailViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
     }
+}
 
-    // methods
+private extension PokemonDetailViewController {
+
     func setupViews() {
         nameLabel.text = pokemon.name
         idLabel.text = "No.\(pokemon.id)"

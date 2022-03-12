@@ -50,9 +50,11 @@ class CollectionViewCellGenerator {
 
 }
 
-extension CollectionViewCellGenerator {
 
-    private func setupCollectionViewLayout() {
+//MARK: - Private Methods
+private extension CollectionViewCellGenerator {
+
+    func setupCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: verticalMargin, left: holizontalMargin, bottom: verticalMargin, right: holizontalMargin)
         layout.minimumInteritemSpacing = spacing

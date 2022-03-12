@@ -9,7 +9,7 @@ import UIKit
 
 final class PokemonListViewController: UIViewController {
 
-    // outlets
+    // Outlets
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -19,12 +19,13 @@ final class PokemonListViewController: UIViewController {
     }
 
 
-    // propaties
+    // Properties
     private var presenter: PokemonListPresenterInput?
     private var pokemons = [Pokemon]()
     private var cellGenerator: CollectionViewCellGenerator!
 
-    // life cycles
+
+    // LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = PokemonListPresenter(view: self)
@@ -38,6 +39,7 @@ final class PokemonListViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
     }
 }
+
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -58,12 +60,12 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.didSelectItem(pokemon: pokemons[indexPath.row])
     }
-
 }
 
 
 //MARK: - UICollectionViewDelegateFlowLayout
 extension PokemonListViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellGenerator.getItemSizeWithEqualSpacing()
     }
@@ -100,5 +102,4 @@ extension PokemonListViewController: PokemonListPresenterOutput {
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
-
 }
